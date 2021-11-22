@@ -12,4 +12,5 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
   ],
+  base:"/high-quality-table-snapshot/",
 });

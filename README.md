@@ -1,11 +1,17 @@
-# Vue 3 + Typescript + Vite
+# 表格高清截图制作工具
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 成品
 
-## Recommended IDE Setup
+[预览](https://luliangce.github.io/high-quality-table-snapshot/)
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+## 说明
 
-## Type Support For `.vue` Imports in TS
+这个仓库源自于帖子：[如何快速制作这样的表格并导出高清图片](https://v2ex.com/t/815828)
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+提问者苦于编辑文档时插入表格不方便，希望使用图片方式代替表格。但是图片的清晰度又不足，希望能够制作高清的、样式丰富的表格图片。  
+
+我出于练习的目的，设计这个工具并实现出来。考虑的点主要是：
+
+- 高清：HTML渲染的结果是矢量的，使用canvas工具调高scale可以轻松的实现高分辨率的图片截图。
+- 样式：当前使用了element-plus的table工具，可以暴露出样式相关API，由使用者修改CSS来实现调整样式
+- 数据录入：设计了最简单的场景——从Excel复制数据粘贴到输入框，根据空格自动还原成表格。对存在空单元格的数据支持可能存在问题，这个暂时没有处理。
